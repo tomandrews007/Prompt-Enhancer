@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Prompt Enhancer</title>
+        <link rel="stylesheet" href="/style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+      </head>
+      <body class="light-mode">
+        <div class="theme-toggle">
+          <button id="themeToggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+        <div id="root">
+          <header class="app-header">
+            <h1 class="title">Prompt Enhancer</h1>
+            <p class="subtitle">Transform your ideas into powerful prompts</p>
+          </header>
+
+          <main class="main-content">
+            <div class="input-section">
+              <div class="input-wrapper">
+                <textarea 
+                  id="seedPrompt" 
+                  placeholder="Enter your seed prompt here..."
+                  rows="4"
+                ></textarea>
+                <div class="button-container">
+                  <button id="briefButton" class="enhance-btn brief">
+                    <i class="fas fa-compress-alt"></i>
+                    <span>Brief Enhancement</span>
+                    <small>Concise, under 70 words</small>
+                  </button>
+                  <button id="maxButton" class="enhance-btn detailed">
+                    <i class="fas fa-expand-alt"></i>
+                    <span>Detailed Enhancement</span>
+                    <small>Comprehensive, under 700 words</small>
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <div id="outputContainer" class="output-section hidden">
+              <div class="output-header">
+                <div class="output-title">
+                  <h3>Enhanced Output</h3>
+                  <span class="output-subtitle">Your enhanced prompt is ready</span>
+                </div>
+                <div class="output-actions">
+                  <button id="copyButton" class="action-btn" aria-label="Copy to clipboard">
+                    <i class="far fa-copy"></i>
+                    <span>Copy</span>
+                  </button>
+                </div>
+              </div>
+              <div id="enhancedOutput" class="output-content"></div>
+            </div>
+          </main>
+
+          <section class="history-section">
+            <div class="history-header">
+              <h2>History</h2>
+              <span class="history-subtitle">Your recent prompts</span>
+            </div>
+            <div id="historyContainer" class="history-grid"></div>
+          </section>
+        </div>
+        <script src="/main.js"></script>
+      </body>
+    </html>
