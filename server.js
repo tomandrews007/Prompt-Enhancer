@@ -25,8 +25,8 @@ import express from 'express';
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-    const briefPrompt = "Expand on the following prompt in a brief and concise manner, limit your response to under 70 words: ";
-    const maxPrompt = "Expand on the following prompt in a detailed and comprehensive manner, limit your response to under 700 words: ";
+    const briefPrompt = "Analyze the context and intent of the seed prompt. Correct grammatical mistakes and improve clarity. Add specificity where needed while keeping the enhancement concise and actionable. Retain the original focus and ensure the final output is optimized for generating a relevant response. Limit the enhanced prompt to under 70 words, focusing on delivering clear, precise, and purposeful guidance for the LLM:";
+    const maxPrompt = "Take the following seed prompt and enhance it into its most detailed version. Begin by understanding the context, intent, and subject matter. Correct errors, identify implicit details, and expand comprehensively to include background information, relevant parameters, examples, and clarifying questions. Ensure the enhancement provides clear purpose, key concepts, and assumptions while addressing ambiguities. Structure it logically for an LLM to generate a thorough and accurate response, ensuring it remains under 700 words: ";
 
     app.post('/enhance', async (req, res) => {
       const { seedPrompt, option } = req.body;
