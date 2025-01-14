@@ -23,7 +23,7 @@ import express from 'express';
     }
 
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
     const briefPrompt = "Expand on the following prompt in a brief and concise manner, limit your response to under 70 words: ";
     const maxPrompt = "Expand on the following prompt in a detailed and comprehensive manner, limit your response to under 700 words: ";
